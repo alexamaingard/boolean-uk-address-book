@@ -13,13 +13,6 @@
       "lastName": "Queen",
       "blockContact": false,
       "addressId": 2
-    },
-    {
-      "firstName": "Alexa",
-      "lastName": "Maingard",
-      "blockContact": false,
-      "addressId": 3,
-      "id": 3
     }
   ],
   "addresses": [
@@ -34,12 +27,6 @@
       "street": "Buckingham Palace",
       "city": "London",
       "postCode": "SW1A 1AA"
-    },
-    {
-      "street": "Whocares",
-      "city": "Hell",
-      "postCode": "56894",
-      "id": 3
     }
   ]
 }
