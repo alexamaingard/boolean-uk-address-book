@@ -15,18 +15,11 @@
       "addressId": 2
     },
     {
-      "id": 3,
       "firstName": "Alexa",
       "lastName": "Maingard",
       "blockContact": false,
-      "addressId": 3
-    },
-    {
-      "firstName": "Bravin",
-      "lastName": "Who",
-      "blockContact": false,
-      "id": 4,
-      "addressId": 4
+      "addressId": 3,
+      "id": 3
     }
   ],
   "addresses": [
@@ -43,16 +36,10 @@
       "postCode": "SW1A 1AA"
     },
     {
-      "id": 3,
       "street": "Whocares",
-      "city": "London",
-      "postCode": "SW1A 1AA"
-    },
-    {
-      "id": 4,
-      "street": "HellLane",
       "city": "Hell",
-      "postCode": "SW1A 1AA"
+      "postCode": "56894",
+      "id": 3
     }
   ]
 }

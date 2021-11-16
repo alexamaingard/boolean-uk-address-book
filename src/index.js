@@ -133,9 +133,8 @@ function saveContact(contact, address, method, id = ''){
 
 function createContact(){
   const newContact = getContactInfo();
-  Object.assign(newContact, {id : state.contacts.length + 1}, {addressId: state.contacts.length + 1});
+  Object.assign(newContact, {addressId: state.contacts.length + 1});
   const newAddress = getAddressInfo();
-  Object.assign(newAddress, {id : state.contacts.length + 1});
   saveContact(newContact, newAddress, 'POST');
 }
 
@@ -180,7 +179,6 @@ function renderContactForm(){
   const firstNameLabel = document.createElement('label');
   firstNameLabel.setAttribute('for', 'first-name-input');
   firstNameLabel.innerText = 'First Name:';
-
   const firstNameInput = document.createElement('input');
   firstNameInput.setAttribute('type', 'text');
   firstNameInput.setAttribute('name', 'first-name-input');
@@ -189,7 +187,6 @@ function renderContactForm(){
   const lastNameLabel = document.createElement('label');
   lastNameLabel.setAttribute('for', 'last-name-input');
   lastNameLabel.innerText = 'Last Name:';
-
   const lastNameInput = document.createElement('input');
   lastNameInput.setAttribute('type', 'text');
   lastNameInput.setAttribute('name', 'last-name-input');
@@ -198,7 +195,6 @@ function renderContactForm(){
   const streetLabel = document.createElement('label');
   streetLabel.setAttribute('for', 'street-input');
   streetLabel.innerText = 'Street:';
-
   const streetInput = document.createElement('input');
   streetInput.setAttribute('type', 'text');
   streetInput.setAttribute('name', 'street-input');
@@ -207,7 +203,6 @@ function renderContactForm(){
   const cityLabel = document.createElement('label');
   cityLabel.setAttribute('for', 'city-input');
   cityLabel.innerText = 'City:';
-
   const cityInput = document.createElement('input');
   cityInput.setAttribute('type', 'text');
   cityInput.setAttribute('name', 'city-input');
@@ -216,7 +211,6 @@ function renderContactForm(){
   const postCodeLabel = document.createElement('label');
   postCodeLabel.setAttribute('for', 'post-code-input');
   postCodeLabel.innerText = 'Post Code:';
-
   const postCodeInput = document.createElement('input');
   postCodeInput.setAttribute('type', 'text');
   postCodeInput.setAttribute('name', 'post-code-input');
@@ -231,8 +225,6 @@ function renderContactForm(){
   const checkboxLabel = document.createElement('label');
   checkboxLabel.setAttribute('for', 'block-checkbox');
   checkboxLabel.innerText = 'Block';
-
-  checkboxDiv.append(checkbox, checkboxLabel);
 
   const actionsDiv = document.createElement('div');
   actionsDiv.className = 'actions-section';
@@ -251,8 +243,8 @@ function renderContactForm(){
     }
   });
 
+  checkboxDiv.append(checkbox, checkboxLabel);
   actionsDiv.append(button);
-
   newContForm.append(h1, firstNameLabel, firstNameInput, lastNameLabel, lastNameInput, streetLabel, streetInput, cityLabel, cityInput, postCodeLabel, postCodeInput, checkboxDiv, actionsDiv);
   viewSection.append(newContForm);
 
@@ -278,12 +270,12 @@ function renderContactToEdit(div){
   document.querySelector('#post-code-input').value = contact.address.postCode;
   document.querySelector('#create-btn').innerText = 'Modify';
   document.querySelector('#block-checkbox').checked = contact.blockContact;
-
+  
   const deleteBtn = document.createElement('button');
   deleteBtn.className = 'button blue';
   deleteBtn.setAttribute('type', 'submit');
   deleteBtn.innerText = 'Delete';
-
+  
   deleteBtn.addEventListener('click', function(event) {
     event.preventDefault();
     deleteContact(contact.id);
